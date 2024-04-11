@@ -8,7 +8,13 @@ const path=require("path");
 const cors=require("cors");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin:[],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 
 //DataBase connection with MongoDB
 //mongoose.connect("mongodb+srv://nihanthreddykeesara:dWJtjqSgZyolc5Y8@cluster0.yn8hza5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
